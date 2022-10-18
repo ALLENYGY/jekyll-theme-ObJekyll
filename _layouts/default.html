@@ -3,12 +3,11 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="{{ page.jekyll-theme-WuK.default.html_lang }}">
-
+<html lang="{{ page.jekyll-theme-ObJekyll.default.html_lang }}">
 <head>
   <title>
     {% if page.title == "Home" %}
-    {{ site.title }} &middot; {{ site.tagline }}
+    {{ site.title }}
     {% else %}
     {{ page.title }} &middot; {{ site.title }}
     {% endif %}
@@ -16,15 +15,15 @@ layout: compress
   {% if site.plugins contains 'jekyll-seo-tag' %}
   {% seo title=false %}
   {% endif %}
-  {% for node in page.jekyll-theme-WuK.default.append_to_head %}
+  {% for node in page.jekyll-theme-ObJekyll.default.append_to_head %}
   {{ node }}
   {% endfor %}
 </head>
 
 <body
-  class="{{ page.jekyll-theme-WuK.default.body.theme-base }}{% if page.jekyll-theme-WuK.default.body.layout-reverse %} layout-reverse{% endif %}{% if page.jekyll-theme-WuK.default.body.sidebar-overlay %} sidebar-overlay{% endif %}">
+  class="{{ page.jekyll-theme-ObJekyll.default.body.theme-base }}{% if page.jekyll-theme-ObJekyll.default.body.layout-reverse %} layout-reverse{% endif %}{% if page.jekyll-theme-ObJekyll.default.body.sidebar-overlay %} sidebar-overlay{% endif %}">
   {% assign sidebar_disable = false %}
-  {% if page.jekyll-theme-WuK.default.sidebar.disable %}
+  {% if page.jekyll-theme-ObJekyll.default.sidebar.disable %}
   {% assign sidebar_disable = true %}
   {% endif %}
   {% unless sidebar_disable %}
@@ -32,16 +31,16 @@ layout: compress
   <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
   {% endcomment %}
-  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.jekyll-theme-WuK.default.sidebar.open
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.jekyll-theme-ObJekyll.default.sidebar.open
     %}checked{% endif %} />
   {% comment %}
   <!-- Toggleable sidebar -->
   {% endcomment %}
   <div class="sidebar" id="sidebar">
-    {% if page.jekyll-theme-WuK.default.sidebar.avatar.enable %}
+    {% if page.jekyll-theme-ObJekyll.default.sidebar.avatar.enable %}
     <div class="sidebar-item">
       <div class="effect effect-right_to_left">
-        <img class="effect-img" src="{{ page.jekyll-theme-WuK.default.sidebar.avatar.img }}" alt="img" />
+        <img class="effect-img" src="{{ page.jekyll-theme-ObJekyll.default.sidebar.avatar.img }}" alt="img" />
         <div class="effect-info">
           {{ site.description }}
         </div>
@@ -49,40 +48,39 @@ layout: compress
     </div>
     {% endif %}
     <nav class="sidebar-nav">
-      {% for node in page.jekyll-theme-WuK.default.sidebar.nav %}
+      {% for node in page.jekyll-theme-ObJekyll.default.sidebar.nav %}
       <a class="sidebar-nav-item{% if page.url == node.href %} active{% endif %}" href="{{ node.href }}">
         {{ node.title }}
       </a>
       {% endfor %}
     </nav>
     <div class="sidebar-item">
-      {% if page.jekyll-theme-WuK.default.sidebar.simple_jekyll_search.enable %}
-      {{ page.jekyll-theme-WuK.default.sidebar.simple_jekyll_search.append }}
+      {% if page.jekyll-theme-ObJekyll.default.sidebar.simple_jekyll_search.enable %}
+      {{ page.jekyll-theme-ObJekyll.default.sidebar.simple_jekyll_search.append }}
       {% endif %}
-      {% if page.jekyll-theme-WuK.default.sidebar.jekyll-toc.enable %}
-      {{ page.jekyll-theme-WuK.default.sidebar.jekyll-toc.prepend }}
+      {% if page.jekyll-theme-ObJekyll.default.sidebar.jekyll-toc.enable %}
       {% include toc.html html=content ordered=true skipNoIDs=true sanitize=true id="toc" %}
       {% endif %}
-      {% for node in page.jekyll-theme-WuK.default.sidebar.append_to_sidebar %}
+      {% for node in page.jekyll-theme-ObJekyll.default.sidebar.append_to_sidebar %}
       {{ node }}
       {% endfor %}
-      {% if page.jekyll-theme-WuK.default.sidebar.wordcount.enable %}
+      {% if page.jekyll-theme-ObJekyll.default.sidebar.wordcount.enable %}
       <div>
-        {{ page.jekyll-theme-WuK.default.sidebar.wordcount.prepend }}
+        {{ page.jekyll-theme-ObJekyll.default.sidebar.wordcount.prepend }}
         {% assign count = 0 %}
-        {% for post in site.posts %}
+        {% for post in site.notes %}
         {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
         {% assign count = count | plus: single_count %}
         {% endfor %}
-        {% for post in site.pages %}
-        {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
-        {% assign count = count | plus: single_count %}
-        {% endfor %}
+        {% if count >10000 %}
+        {{ count | divided_by: 10000 }}{{ page.jekyll-theme-ObJekyll.default.sidebar.wordcount.wan }}
+        {% assign count = count | modulo: 10000 %}
+        {% endif %}  
         {% if count > 1000 %}
-        {{ count | divided_by: 1000 }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.kilo }}
-        {{ count | modulo: 1000 }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.unit }}
+        {{ count | divided_by: 1000 }}{{ page.jekyll-theme-ObJekyll.default.sidebar.wordcount.kilo }}
+        {{ count | modulo: 1000 }}{{ page.jekyll-theme-ObJekyll.default.sidebar.wordcount.unit }}
         {% else %}
-        {{ count }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.unit }}
+        {{ words }}{{ page.jekyll-theme-ObJekyll.default.sidebar.wordcount.unit }}
         {% endif %}
       </div>
       {% endif %}
@@ -111,7 +109,7 @@ layout: compress
   {% unless sidebar_disable %}
   <label for="sidebar-checkbox" class="sidebar-toggle"></label>
   {% endunless %}
-  {{ page.jekyll-theme-WuK.default.append }}
+  {{ page.jekyll-theme-ObJekyll.default.append }}
 </body>
 
 </html>

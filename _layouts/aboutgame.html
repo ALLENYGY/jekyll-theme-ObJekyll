@@ -1,0 +1,20 @@
+---
+layout: post
+---
+{% if page.jekyll-theme-ObJekyll.aboutgame.developer.enable %}
+{{ page.jekyll-theme-ObJekyll.aboutgame.developer.prepend }}
+开发商：{{ page.developer }}
+<br>
+{% endif %}
+{% if page.jekyll-theme-ObJekyll.aboutgame.publisher.enable %}
+{{ page.jekyll-theme-ObJekyll.aboutgame.publisher.prepend }}
+发行商：{{ page.publisher }}
+<br>
+{% endif %}
+{% if page.jekyll-theme-ObJekyll.aboutgame.releasedate.enable %}
+{{ page.jekyll-theme-ObJekyll.aboutgame.releasedate.prepend }}
+发行日期：{{ page.releasedate }}
+<br>
+<br>
+{% endif %}
+{{ content }}

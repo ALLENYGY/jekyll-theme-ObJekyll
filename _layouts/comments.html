@@ -1,5 +1,9 @@
 ---
 layout: page
 ---
-{{ content }}
-{{ page.jekyll-theme-WuK.comments.append }}
+
+<div class="wrapper">
+    <main>{{ content }}</main>
+</div>
+{% include link-previews.html wrapperQuerySelector="content" %}
+{{ page.jekyll-theme-ObJekyll.comments.append }}

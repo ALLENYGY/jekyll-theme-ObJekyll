@@ -17,7 +17,7 @@ layout: null
       {% else %}
       "url"      : "{{ post.url | relative_url }}"
       {% endif %}
-    } {% unless forloop.last %},{% endunless %}{% endunless %}
+    }{% endunless %} {% unless forloop.last %},{% endunless %}
   {% endfor %}
   ,
   {% for page in site.pages %}
@@ -26,7 +26,7 @@ layout: null
         "title"    : "{{ page.title | escape }}",
         "category" : "{{ page.category }}",
         "tags"     : "{{ page.tags | join: ', ' }}",
-        "date"     : "{{ post.date }}",
+        "date"     : "{{ page.date }}",
         {% if page.jekyll-theme-ObJekyll.default.sidebar.simple_jekyll_search.full_text_search %}
         "content"  : {{ page.content | jsonify }},
         {% endif %}

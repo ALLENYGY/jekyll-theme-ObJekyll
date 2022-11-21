@@ -5,7 +5,7 @@ layout: comments
     <span class="post-date">
         {% if page.jekyll-theme-ObJekyll.post.modified.enable %}
         {{ page.jekyll-theme-ObJekyll.post.modified.prepend }}
-        改于：{{ page.last_modified_at | date: "%Y-%m-%d %T %A" }}
+        改于：{{ page.lastmod | date: "%Y-%m-%d %T %A" }}
         <br>
         {% endif %}
         {% if page.jekyll-theme-ObJekyll.post.date.enable %}

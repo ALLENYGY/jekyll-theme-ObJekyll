@@ -8,7 +8,7 @@ layout: null
       "title"    : "{{ post.title | escape }}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
-      "date"     : "{{ post.date }}",
+      "date"     : "{{ post.created }}",
       {% if page.jekyll-theme-ObJekyll.default.sidebar.simple_jekyll_search.full_text_search %}
       "content"  : {{ post.content | jsonify }},
       {% endif %}
@@ -26,7 +26,7 @@ layout: null
         "title"    : "{{ page.title | escape }}",
         "category" : "{{ page.category }}",
         "tags"     : "{{ page.tags | join: ', ' }}",
-        "date"     : "{{ page.date }}",
+        "date"     : "{{ page.created }}",
         {% if page.jekyll-theme-ObJekyll.default.sidebar.simple_jekyll_search.full_text_search %}
         "content"  : {{ page.content | jsonify }},
         {% endif %}

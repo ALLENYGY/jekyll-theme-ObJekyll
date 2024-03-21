@@ -5,12 +5,12 @@ layout: comments
     <span class="post-date">
         {% if page.jekyll-theme-ObJekyll.post.modified.enable %}
         {{ page.jekyll-theme-ObJekyll.post.modified.prepend }}
-        改于：{{ page.lastmod | date: "%Y-%m-%d %T %A" }}
+        改于：{{ page.updated | date: "%Y-%m-%d %T %A" }}
         <br>
         {% endif %}
         {% if page.jekyll-theme-ObJekyll.post.date.enable %}
         {{ page.jekyll-theme-ObJekyll.post.date.prepend }}
-        建于：{{ page.date | date: "%Y-%m-%d %T %A" }}
+        建于：{{ page.created | date: "%Y-%m-%d %T %A" }}
         {% endif %}
         {% if page.jekyll-theme-ObJekyll.post.wordcount.enable %}
         {{ page.jekyll-theme-ObJekyll.post.wordcount.prepend }}

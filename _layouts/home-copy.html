@@ -6,8 +6,8 @@ layout: default
   <section
     {% for node in page.jekyll-theme-ObJekyll.home.append_to_section_tag %}{{ node.key }}{% if node.value %}='{{ node.value|escape }}'
     {% endif %} {% endfor %}>
-    <!-- 直接将内容放入这里，而非使用<textarea> -->
-    {{ content }}
+    <textarea data-template>{{ content }}</textarea>
   </section>
 </div>
 {{ page.jekyll-theme-ObJekyll.home.append }}
+

@@ -304,6 +304,8 @@ a {
   color: inherit; /* 继承父元素的颜色 */
   text-decoration: none; /* 去除下划线 */
   transition: color 0.3s ease-in-out; /* 平滑过渡效果 */
+  color: #007bff !important;
+  text-decoration: underline !important;
 }
 
 /* 鼠标悬停时的链接样式 */
@@ -312,3 +314,4 @@ a:hover {
   text-decoration: underline; /* 添加下划线 */
   border-bottom: none; /* 如果之前有border-bottom，这里可以去除 */
 }
+
